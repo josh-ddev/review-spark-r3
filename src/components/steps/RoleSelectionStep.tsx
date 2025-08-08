@@ -71,28 +71,28 @@ export const RoleSelectionStep = ({
   const canShowMore = selectedRole && getTemplatesByRole(selectedRole).length > 3;
 
   return (
-    <div className="step-enter max-w-4xl mx-auto">
+    <div className="step-enter max-w-4xl mx-auto px-4">
       {/* Header */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6 md:mb-8">
         <Button
           variant="ghost"
           onClick={onBack}
-          className="absolute left-4 top-8 md:relative md:left-0 md:top-0 mb-4"
+          className="absolute left-4 top-4 md:relative md:left-0 md:top-0 mb-4 z-10"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back
         </Button>
         
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight px-2">
           How are you related to R3 Consulting Limited?
         </h1>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-base md:text-lg text-muted-foreground px-2">
           Select your relationship to get personalized review templates
         </p>
       </div>
 
       {/* Role Selection Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
         {roleOptions.map((option) => {
           const Icon = option.icon;
           const isSelected = selectedRole === option.value;
@@ -100,21 +100,21 @@ export const RoleSelectionStep = ({
           return (
             <Card
               key={option.value}
-              className={`card-interactive transition-all duration-300 ${
+              className={`card-interactive transition-all duration-300 cursor-pointer min-h-[140px] md:min-h-[160px] p-6 ${
                 isSelected 
-                  ? 'ring-2 ring-primary shadow-lg scale-105 bg-gradient-to-br ' + option.gradient
-                  : 'hover:shadow-lg'
+                  ? 'ring-2 ring-primary shadow-lg md:scale-105 bg-gradient-to-br ' + option.gradient
+                  : 'hover:shadow-lg active:scale-95'
               }`}
               onClick={() => handleRoleSelect(option.value)}
             >
-              <div className="text-center">
-                <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+              <div className="text-center h-full flex flex-col justify-center">
+                <div className={`mx-auto w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-3 md:mb-4 ${
                   isSelected ? 'bg-primary text-primary-foreground' : 'bg-muted'
                 }`}>
-                  <Icon className="h-8 w-8" />
+                  <Icon className="h-7 w-7 md:h-8 md:w-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{option.label}</h3>
-                <p className="text-sm text-muted-foreground">{option.description}</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2">{option.label}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{option.description}</p>
               </div>
             </Card>
           );
@@ -123,23 +123,23 @@ export const RoleSelectionStep = ({
 
       {/* Templates Section */}
       {selectedRole && (
-        <div className="card-gradient p-8 animate-in fade-in duration-500">
-          <h2 className="text-2xl font-bold mb-6 text-center">
+        <div className="card-gradient p-4 md:p-8 animate-in fade-in duration-500">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">
             Choose your review template
           </h2>
           
-          <div className="space-y-4 mb-6">
+          <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
             {getCurrentTemplates().map((template, index) => (
               <Card
                 key={template.id}
-                className="card-interactive p-6 text-left hover:bg-primary/5"
+                className="card-interactive p-4 md:p-6 text-left hover:bg-primary/5 cursor-pointer active:scale-95 transition-transform"
                 onClick={() => onTemplateSelect(template.text)}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-sm">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-semibold text-sm">
                     {index + 1}
                   </div>
-                  <p className="text-foreground leading-relaxed">{template.text}</p>
+                  <p className="text-foreground leading-relaxed text-sm md:text-base">{template.text}</p>
                 </div>
               </Card>
             ))}
@@ -152,7 +152,8 @@ export const RoleSelectionStep = ({
                 variant="outline"
                 onClick={handleShowMore}
                 disabled={isLoading}
-                className="btn-secondary"
+                className="btn-secondary min-h-[48px] px-6"
+                size="lg"
               >
                 {isLoading ? (
                   <>
