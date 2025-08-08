@@ -24,7 +24,7 @@ export const ThankYouStep = ({ selectedTemplate, onBack }: ThankYouStepProps) =>
 
   const handleReviewRedirect = () => {
     // Replace with actual Google My Business review URL
-    const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID';
+    const googleReviewUrl = 'https://search.google.com/local/writereview?placeid=ChIJ61TphA2SOxARh-C4M7161eY';
     window.open(googleReviewUrl, '_blank');
   };
 
