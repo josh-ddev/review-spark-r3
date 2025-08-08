@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import r3Logo from '@/assets/r3-logo.png';
+import r3Logo from '/lovable-uploads/81a8e23f-b938-430b-9474-65f32363e416.png';
 
 interface LandingStepProps {
   onProceed: () => void;
@@ -14,19 +14,19 @@ export const LandingStep = ({ onProceed }: LandingStepProps) => {
         <div className="mb-8">
           <img 
             src={r3Logo} 
-            alt="R3 Consulting Logo" 
-            className="mx-auto h-16 w-auto object-contain"
+            alt="R3 Consulting Limited Logo" 
+            className="mx-auto h-20 w-20 object-contain"
           />
         </div>
 
         {/* Heading */}
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
-          Leave a Review for R3 Consulting
+          Leave a Review for R3 Consulting Limited
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-          You're about to leave a review for R3 Consulting — this will only take{' '}
+          You're about to leave a review for R3 Consulting Limited — this will only take{' '}
           <span className="font-semibold text-primary">2 minutes</span>.
         </p>
 

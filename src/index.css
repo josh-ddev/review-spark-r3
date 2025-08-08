@@ -6,54 +6,54 @@
 
 @layer base {
   :root {
-    /* R3 Brand Colors - Professional Blue/Gray Palette */
+    /* R3 Consulting Limited Brand Colors - Green & White */
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --foreground: 150 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 150 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 150 10% 15%;
 
-    /* Primary - Professional Blue */
-    --primary: 214 84% 56%;
+    /* Primary - R3 Brand Green */
+    --primary: 110 65% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 214 84% 46%;
+    --primary-hover: 110 65% 35%;
 
-    /* Secondary - Light Blue Gray */
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 220 15% 20%;
+    /* Secondary - Light Green */
+    --secondary: 110 40% 95%;
+    --secondary-foreground: 150 10% 15%;
 
-    /* Muted - Neutral Gray */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8.9% 46.1%;
+    /* Muted - Neutral Gray-Green */
+    --muted: 120 15% 96%;
+    --muted-foreground: 120 8% 46%;
 
-    /* Accent - Vibrant Blue */
-    --accent: 214 95% 93%;
-    --accent-foreground: 214 84% 56%;
+    /* Accent - Soft Green */
+    --accent: 110 50% 92%;
+    --accent-foreground: 110 65% 35%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 214 84% 56%;
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 110 65% 45%;
 
-    /* Success Green for Copy Confirmation */
-    --success: 142 76% 36%;
+    /* Success Green (same as primary for consistency) */
+    --success: 110 65% 45%;
     --success-foreground: 0 0% 100%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 46%));
-    --gradient-secondary: linear-gradient(135deg, hsl(220 14% 96%), hsl(220 13% 91%));
-    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 46%) 50%, hsl(220 15% 20%) 100%);
+    /* R3 Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(110 65% 45%), hsl(110 65% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(120 15% 96%), hsl(120 15% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(110 65% 45%) 0%, hsl(110 65% 35%) 50%, hsl(150 10% 15%) 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 15% 20% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 15% 20% / 0.1), 0 2px 4px -1px hsl(220 15% 20% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(220 15% 20% / 0.1), 0 4px 6px -2px hsl(220 15% 20% / 0.05);
-    --shadow-card: 0 4px 12px hsl(214 84% 56% / 0.08);
+    /* Shadows with Green Tint */
+    --shadow-sm: 0 1px 2px 0 hsl(150 10% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(150 10% 15% / 0.1), 0 2px 4px -1px hsl(150 10% 15% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(150 10% 15% / 0.1), 0 4px 6px -2px hsl(150 10% 15% / 0.05);
+    --shadow-card: 0 4px 12px hsl(110 65% 45% / 0.08);
 
     /* Animation Timing */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

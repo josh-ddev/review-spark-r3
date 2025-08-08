@@ -117,7 +117,7 @@ export const ThankYouStep = ({ selectedTemplate, onBack }: ThankYouStepProps) =>
         <div className="bg-accent/20 rounded-lg p-6">
           <h3 className="font-semibold text-lg mb-2">🎉 You're Almost Done!</h3>
           <p className="text-muted-foreground">
-            Your support means the world to us. Thank you for taking the time to share your experience with R3 Consulting.
+            Your support means the world to us. Thank you for taking the time to share your experience with R3 Consulting Limited.
           </p>
         </div>
 

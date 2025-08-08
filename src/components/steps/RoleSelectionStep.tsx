@@ -24,22 +24,22 @@ export const RoleSelectionStep = ({
   const roleOptions = [
     {
       value: 'client' as Role,
-      label: 'Client',
-      description: 'I hired R3 Consulting for services',
+      label: 'I hired R3 Consulting Limited for services',
+      description: 'I hired R3 Consulting Limited for services',
       icon: Briefcase,
       gradient: 'from-primary/10 to-primary/5'
     },
     {
       value: 'employee' as Role,
       label: 'Employee/Partner',
-      description: 'I work with or for R3 Consulting',
+      description: 'I work with or for R3 Consulting Limited',
       icon: Users,
       gradient: 'from-accent/20 to-accent/10'
     },
     {
       value: 'associate' as Role,
       label: 'Friend/Associate',
-      description: 'I know R3 Consulting professionally',
+      description: 'I know R3 Consulting Limited professionally',
       icon: UserCheck,
       gradient: 'from-secondary/30 to-secondary/10'
     }
@@ -84,7 +84,7 @@ export const RoleSelectionStep = ({
         </Button>
         
         <h1 className="text-3xl md:text-4xl font-bold mb-4">
-          How are you related to R3 Consulting?
+          How are you related to R3 Consulting Limited?
         </h1>
         <p className="text-lg text-muted-foreground">
           Select your relationship to get personalized review templates
