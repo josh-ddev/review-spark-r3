@@ -2,39 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* R3 Consulting Professional Design System */
 
 @layer base {
   :root {
+    /* R3 Brand Colors - Professional Blue/Gray Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Professional Blue */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 84% 46%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Light Blue Gray */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 220 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Neutral Gray */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Vibrant Blue */
+    --accent: 214 95% 93%;
+    --accent-foreground: 214 84% 56%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 214 84% 56%;
+
+    /* Success Green for Copy Confirmation */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(214 84% 46%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 14% 96%), hsl(220 13% 91%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 46%) 50%, hsl(220 15% 20%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 20% / 0.1), 0 2px 4px -1px hsl(220 15% 20% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 20% / 0.1), 0 4px 6px -2px hsl(220 15% 20% / 0.05);
+    --shadow-card: 0 4px 12px hsl(214 84% 56% / 0.08);
+
+    /* Animation Timing */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -100,6 +124,76 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium hover:bg-accent transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+
+  .btn-success {
+    @apply bg-success text-success-foreground px-6 py-3 rounded-lg font-medium hover:bg-green-600 transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+
+  /* Card Variants */
+  .card-interactive {
+    @apply bg-card border border-border rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-primary/5 to-accent border border-border rounded-xl p-6 shadow-lg;
+  }
+
+  /* Step Animation */
+  .step-enter {
+    @apply animate-in fade-in slide-in-from-right-5 duration-500;
+  }
+
+  .step-exit {
+    @apply animate-out fade-out slide-out-to-left-5 duration-300;
+  }
+
+  /* Copy Button Animation */
+  .copy-success {
+    @apply animate-pulse bg-success text-success-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeInSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-out {
+    animation: fadeOutSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeOutSlide {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
   }
 }
